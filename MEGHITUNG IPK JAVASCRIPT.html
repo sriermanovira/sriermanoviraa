@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+        function hitungIP(sem) {
+            let totalsks = 0;
+            let totalmutu = 0;
+
+            sem.forEach(mk => {
+                const mutu = mk.bobot * mk.sks;
+                totalmutu += mutu;
+                totalsks += mk.sks;
+            });
+
+            const ip = totalmutu / totalsks;
+
+            return ip.toFixed(2);
+        }
+
+        const semester = [
+            {sks: 2, bobot: 4.00 },
+            {sks: 2, bobot: 3.00 },
+            {sks: 2, bobot: 3.00 },
+            {sks: 3, bobot: 3.50 },
+            {sks: 2, bobot: 4.00 },
+            {sks: 3, bobot: 4.00 },
+            {sks: 1, bobot: 4.00 },
+            {sks: 3, bobot: 3.00 },
+            {sks: 2, bobot: 4.00 },
+        ];
+        
+        function showIP() {
+            const ip = hitungIP(semester);
+            document.write(`IP semester ini adalah: ${ip}`);
+        }
+    </script>
+</head>
+<body>
+    <body>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Kode MK</th>
+                    <th>Nama Mata Kuliah</th>
+                    <th>Jumlah SKS</th>
+                    <th>Bobot</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ITP1012</td>
+                    <td>PENDIDIKAN PANCASILA</td>
+                    <td>2</td>
+                    <td>4.00</td>
+                </tr>
+                <tr>
+                    <td>ITP1042</td>
+                    <td>BAHASA INDONESIA</td>
+                    <td>2</td>
+                    <td>3.00</td>
+                </tr>
+                <tr>
+                    <td>ITP1112</td>
+                    <td>INFORMATIKA SOSIAL</td>
+                    <td>2</td>
+                    <td>3.00</td>
+                </tr>
+                <tr>
+                    <td>ITP1213</td>
+                    <td>TRANSFORMASI DIGITAL</td>
+                    <td>3</td>
+                    <td>3.50</td>
+                </tr>
+                <tr>
+                    <td>ITP1222</td>
+                    <td>MANAJEMEN SISTEM INFORMASI</td>
+                    <td>2</td>
+                    <td>4.00</td>
+                </tr>
+                <tr>
+                    <td>ITP1233</td>
+                    <td>DASAR PEMROGRAMAN</td>
+                    <td>3</td>
+                    <td>4.00</td>
+                </tr>
+                <tr>
+                    <td>ITP1241</td>
+                    <td>PRAKTIKUM DASAR PEMROGRAMAN</td>
+                    <td>1</td>
+                    <td>4.00</td>
+                </tr>
+                <tr>
+                    <td>ITP1253</td>
+                    <td>KALKULUS 1</td>
+                    <td>3</td>
+                    <td>3.00</td>
+                </tr>
+                <tr>
+                    <td>ITP1312</td>
+                    <td>BAHASA INGGRIS</td>
+                    <td>2</td>
+                    <td>4.00</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Tampilkan IPK Semester Sekarang</p>
+        <form>
+        <input type="button" value="Hitung sekarang" onclick="showIP()" />
+        </body>
+    
+</body>
+</html>
